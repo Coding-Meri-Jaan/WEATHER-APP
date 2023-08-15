@@ -1,5 +1,5 @@
 
-Here's a sample README file for your Weather App project:
+Here's a  README file for the Weather App project:
 
 Weather App
 A simple web application that allows users to search for weather information based on city names.
@@ -44,4 +44,5 @@ Search for weather information by city name.
 Display current temperature in Celsius.
 Show weather conditions (e.g., Clear, Cloudy, Rain, etc.).
 Display minimum and maximum temperature for the day.
+Backgroung image changing dynamically as per the weather of the entered input city
 Display the current day and date.
