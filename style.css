@@ -1,0 +1,161 @@
+/* 
+I have used universal selector (*) because I have to add styles from scratch and we know that there are
+some predefined margins and padding to html page which will add to the complexiy while adding my own styles
+So I remove all of them  so that I may dedicate my own calculated margins and padding for each and every element */
+*{
+ 
+    margin:0;
+    padding: 0;
+
+    box-sizing: border-box;
+/* 
+The CSS code * { box-sizing: border-box; } is a universal selector that sets the box-sizing property to border-box for all elements on a web page.
+
+In CSS, the box-sizing property controls how the width and height of elements are calculated, especially in relation to padding and borders. There are two main values for the box-sizing property:
+
+content-box (default): This value calculates the width and height of an element's content area only, excluding padding and borders. In other words, the padding and borders are added to the specified width and height.
+
+border-box: This value calculates the width and height of an element including its content, padding, and borders. In this model, the specified width and height include the padding and borders, so the content area is adjusted to fit within the specified dimensions.
+
+By applying * { box-sizing: border-box; }, you are ensuring that all elements on your web page will use the border-box box-sizing model. This can be helpful in maintaining consistent layout and sizing, as it simplifies calculations when dealing with padding and borders. For example, if you set an element's width to 200 pixels and add 10 pixels of padding, with border-box box-sizing, the total width of the element will remain 200 pixels, and the padding will be included within that width. 
+*/
+}
+
+
+/* Styling the Body element */
+body{
+    background-image: url(https://images.unsplash.com/photo-1541119638723-c51cbe2262aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3VubnklMjBkYXl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&q=60);
+     height: 100vh;
+/* height: 100vh; means that the element will be set to take up the full height of the viewport, ensuring that it covers the entire visible area of the user's screen vertically. This can be particularly useful for creating full-height sections or components in a webpage layout. */
+
+     overflow:hidden;
+     background-position: top center;
+     background-repeat: no-repeat;
+     background-size:cover;
+     font-family:Arial, Helvetica, sans-serif;
+
+     /* 
+overflow: hidden;: This property controls what happens when the content inside an element is too big to fit within its boundaries. Using overflow: hidden; means that any content that goes beyond the element's edges will be hidden and not shown on the webpage.
+
+background-position: top center;: This property sets the starting position of a background image inside an element. When set to top center, it means the background image will start at the top of the element and be centered horizontally.
+
+background-repeat: no-repeat;: Background images can repeat to fill the entire element. By using background-repeat: no-repeat;, you're telling the browser not to repeat the background image; it will only show once.
+
+background-size: cover;: This property controls how a background image is sized in relation to the element. background-size: cover; makes sure the background image covers the entire element while maintaining its aspect ratio. It might crop parts of the image if necessary to ensure full coverage.
+     */
+}
+
+/* 
+If you use the CSS rule * { width: 0; }, it will affect all elements on the web page by setting their widths to 0 pixels. This could have a significant impact on the layout and visibility of your content.
+
+Here's what happens:
+
+Width of Elements: All elements, including text, images, containers, and other HTML elements, will have their width set to 0 pixels. As a result, they will effectively become invisible and will not take up any horizontal space on the page.
+
+Collapsed Layout: Since all elements have a width of 0, they will collapse and overlap with each other. This can lead to unintended visual glitches and layout issues. Text may become unreadable, images may disappear, and containers might not behave as expected.
+
+Content Overflow: If the content within the elements is wider than 0 pixels, it will overflow outside of the element's bounding box. This can result in content spilling over into other areas of the page or even off-screen.
+
+Non-Interactive Elements: Links, buttons, form inputs, and other interactive elements will become unclickable or unusable since they won't have any visible width.
+
+In essence, applying * { width: 0; } is likely to render your web page almost entirely invisible and non-functional due to the collapsed and hidden elements. It's not a recommended CSS rule to use in most cases, as it will break the intended layout and functionality of your website.
+
+*/
+
+
+/* styling the main weather div (.weather-box) in which the div and content are written */
+.weather-box{
+    width: 10 vh;
+    margin: 200px 650px;
+    background-color: rgba(240, 248, 255, 0.3);
+    padding-top:20px;
+    padding-right:20px;
+    padding-left:20px;
+    padding-bottom:5px;
+    text-align: center;
+}
+
+/* giving some bottom margin for the child elements of main weather div (.weather-box) */
+.weather-box > *{
+margin-bottom: 20px;
+}
+
+/* styling the search bar */
+.input-box{
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    /* there is an already predefined border and we can remove it using border: none */
+    border:none;
+
+    /*there is an already predefined border and we can remove it using outline: none  */
+    outline: none;
+    font-size: 1.7rem;
+    font-style: italic;
+    padding: 10 px;
+    height: 45px;
+    text-align: center;
+    border-radius: 10px;
+    color:brown
+}
+
+/* The CSS rule .class:focus { } targets an HTML element with a specific class when it gains focus. Let's break it down:
+
+.class: This represents a CSS class selector. It targets HTML elements that have a specific class assigned to them. For example, if you have an element like <div class="my-element">, you would target it with .my-element in your CSS.
+
+:focus: This is a pseudo-class in CSS that matches an element when it is currently in focus, typically due to user interaction. For example, when a user clicks on an input field or navigates to it using the keyboard, the input element gains focus. */
+
+
+/* We want that when we click our search bar, its background color should be white so we use this :focus */
+.input-box:focus{
+    background-color: rgba(255, 255, 255);
+}
+
+/* styling the content below the input search bar */
+.weather-content{
+    display:none; 
+    /* we want that  when we open our web page we want our weather content to be invisible until we give it an input so when
+    we give some input in search bar the weather content is shown but before that it is hidden 
+    so we initially use this css property of display:none to keep our content hidden and we will explicity use javascript regarding when to show this 
+    content  means our js code will only show this only when we will be giving input as some city
+    */
+    color:blue;
+line-height: 2rem;
+/* font-weight: bold; */
+border-radius: 10px;
+background-color: rgba(255, 255, 255, 0.7);
+height:37vh;
+}
+
+/* styling the location details */
+.location-details{
+    padding-top: 10px;
+    margin-bottom: 10px;
+font-size: larger;
+font-weight:600 ;
+}
+
+.current-weather-status{
+padding:10px;
+}
+
+.temperature{
+    font-size: 40pt;
+    font-weight: 1000;
+    text-shadow:2px 4px rgba(0,0,0,0.3);
+    /* text-shadow: 2px 4px rgba(0, 0, 0, 0.3);: This adds a shadow effect behind the text within elements with the class .temperature. The shadow is created by the text-shadow property, which specifies the horizontal and vertical offset of the shadow (2px to the right and 4px down) and the color of the shadow (rgba(0, 0, 0, 0.3)), where rgba stands for red, green, blue, and alpha (transparency). */
+    margin: 20px 0 30px 0;
+    /* Top and bottom margin space are set to be 20px and the right and left are set to be 0px */
+}
+
+/* using same css for two classes .temp-range and .current-weather using a comma(,) */
+.temp-range{
+font-size:14pt;
+font-weight: 700;
+padding-top: 10px;
+}
+
+.current-weather{
+    font-size:19pt;
+font-weight: 800;
+padding-top: 10px;
+}

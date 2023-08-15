@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+<body>
+
+ 
+    <!-- creation of the div of main box in which we have 2 div 
+    with the first div containing the search bar for city
+    and the second div displaying the weather details of the input city
+   -->
+    <div class="weather-box">
+        <!-- search box div -->
+        <div class="search-input-box">
+        <!-- This is an input field with a placeholder text "Enter City Name..."  having an ID of "input-box" and a class of "input-box." 
+            This input field will be used for entering city in the web page -->
+           <input type="text" id="input-box" class="input-box" placeholder="Enter City Name..." autocomplete="off">
+           <!-- 
+With Autocomplete Enabled:
+When autocomplete="on" is set, the browser may suggest previously entered email addresses to the user as they start typing in the email field. This can be convenient for users who have entered their email on the same device or browser before, as it reduces the need to type the entire email address again.
+
+With Autocomplete Disabled:
+When autocomplete="off" is set, the browser will not offer autocomplete suggestions for the email field, even if the user has entered their email before. This can be useful in situations where you want to prevent the browser from suggesting sensitive or private information, such as email addresses, on shared or public computers.
+
+In summary, the autocomplete attribute allows you to control whether the browser's autocomplete feature is active for a specific input field. It can enhance user convenience by suggesting previously entered values, but there might be cases where you want to disable it to ensure privacy or security.
+ -->
+        </div>
+
+
+
+        <!-- weather displaying div -->
+        <div class="weather-content">
+<!--  As there are different contents within this display div so we create div for different types of info that has to be sytled and shown differently -->
+
+<!-- This div will exhibit informatin about the city we entered with current date and day being showed  -->
+<div class="location-details">
+    <div class="city" id="city">London, GB</div>
+    <div class="day-date" id="day-date">15 Aug,2023 (Tuesday)</div >
+</div>
+
+<div class="current-weather-status">
+    <!-- div for current temperature -->
+    <div class="temperature" id="temperature">34&deg;C</div>
+    <!-- div for temp range of today's date -->
+    <div class="temp-range" id="temp-range">30&deg;C (min)/ 38&deg;C (max)</div>
+    <!-- div displaying what weather is currently in the city  -->
+    <div class="current-weather" id="current-weather"> weather</div>
+    <!-- div for background image -->
+    <div class="img"></div>
+</div>
+        </div>
+    </div>
+    <script src="script.js">
+
+
+    </script>
+</body>
+</html>
